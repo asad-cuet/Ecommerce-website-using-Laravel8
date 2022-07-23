@@ -61,7 +61,7 @@
                   <input type="number" name="tax" class="form-control">
             </div>  
             <div class="col-md-6 mb-3">
-                  <label for="">Active</label>  
+                  <label for="">Active [Allow to show on web page]</label>  
                   <input checked type="checkbox" name="status">
             </div>  
             <div class="col-md-6 mb-3">

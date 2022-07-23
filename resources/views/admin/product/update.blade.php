@@ -62,7 +62,7 @@
                   <input type="number" name="tax" class="form-control" value="{{$val->tax}}">
             </div>  
             <div class="col-md-6 mb-3">
-                  <label for="">Active</label>  
+                  <label for="">Active [Allow to show on web page]</label>  
                   <input type="checkbox" name="status" @php if($val->status==1) echo"checked"  @endphp>
             </div>  
             <div class="col-md-6 mb-3">

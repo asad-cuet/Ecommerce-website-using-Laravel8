@@ -45,7 +45,7 @@ class FrontendController extends Controller
     {
         if(Category::where('slug',$cate_slug)->exists())
         {
-            if(Product::where('slug',$prod_slug)->where('status',1)->exists())
+            if(Product::where('slug',$prod_slug)->exists())
             {
                 $category=Category::where('slug',$cate_slug)->first()->id;
                 $product=Product::where('slug',$prod_slug)->first();
@@ -94,7 +94,7 @@ class FrontendController extends Controller
 
         if($product_name!='')
         {
-            $product=Product::where('name','LIKE','%'.$product_name.'%')->first();
+            $product=Product::where('name','LIKE','%'.$product_name.'%')->where('status',1)->first();
             if($product)
             {
                 return redirect('category/'.$product->category->slug.'/'.$product->slug);
@@ -120,7 +120,7 @@ class FrontendController extends Controller
 
         if($product_name!='')
         {
-            $product=Product::where('name','LIKE','%'.$product_name.'%')
+            $product=Product::where('name','LIKE','%'.$product_name.'%')->where('status',1)
                              ->orWhere('meta_title','LIKE','%'.$product_name.'%')
                              ->orWhere('meta_keywords','LIKE','%'.$product_name.'%')
                              ->orWhere('meta_descript','LIKE','%'.$product_name.'%')
